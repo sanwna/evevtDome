@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <!--<script type="text/javascript">-->
+       <!--function A(name,age){-->
+           <!--this.name=name;-->
+           <!--this.age=age;-->
+           <!--console.log(this)-->
+       <!--}-->
+       <!--A.prototype.acc=function(){-->
+           <!--console.log("acc()")-->
+       <!--}-->
+
+       <!--var obj=new A("wangan",19);-->
+       <!--console.log(obj)-->
+       <!--console.log(obj.__proto__.acc)-->
+
+   <!--</script>-->
+   <script>
+       function A(name,age,pricr) {
+           this.name=name;
+           this.age=age;
+           this.pricr=pricr
+           console.log(this)
+
+           this.Acc=function(){
+               console.log(this.pricr)
+
+           }
+           this.Abb=function () {
+               this.prototype=this.__proto__();
+               console.log(this.age)
+           }
+       }
+       A.prototype.lala=function () {
+
+       }
+
+       var obj = new A('zhangsan',14,'好');
+
+       console.log(A.prototype)
+//函数没有return的话默认的返回值是undefind 有return的话返回的是 return 后面跟着的值、
+       //构造函数里面的this this指向当你new函数产生的这个实例
+       //函数必须调用才会被执行 没有return的 话调用出来结果会是undefind
+       //控制台是只能看到——proto--看不到显示原型
+   </script>
+</body>
+</html>

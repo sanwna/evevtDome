@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="uli">
+    <li id="lii">sahnghai</li>
+    <li>hangzhou</li>
+    <li>beijign </li>
+    <li>gaungzhou</li>
+    <li>fujian</li>
+</ul>
+</body>
+<script>
+ var ul = document.getElementById('uli')
+    var li = document.getElementsByTagName('li')
+// for(var i=0;i<li.length;i++){
+     for(let i=0;i<li.length;i++){
+     li[i].index=i
+     li[i].onclick=function () {
+         alert(this.index)
+     }
+     }
+     //两种可以添加事件的方法：
+    //for循环里面的定义变量用var 或者 用 let的区别是非常大的
+    //用 var的 时候这个时候添加到里面的是个异步的回调函数得等到for循环完后再去给添加
+    //事件 这个时候绑定的事件因为是异步的得添加到事件队列里面然后等for执行完了再去进行添加事件
+    // 用var 定义会变量提升 这个时候的把index的值赋值到一个i上面 然后在添加事件
+    //如果是let的话 就直接for添加事件就行
+    //添加到事件回调函数异步出来的话都会是一个结果 最后for循环执行候的最后一个给添加上事件。
+
+</script>
+
+</html>
